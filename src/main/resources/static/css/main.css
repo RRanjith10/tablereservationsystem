@@ -1,7 +1,133 @@
-h1{
-	color:#0000FF;
+/*
+*primary - #FFBE03
+*secondary - #FDFDFD
+*Brown - #D99F0C
+*grey - #DED9D5
+*#Dark brown -766A68
+*light yello - #FCDFA2
+*lig geay - #AFB8C7
+*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-h2{
-	color:#FF0000;
+body {
+    font-family: "Nunito", sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    /* background-color: #FFBE03; */
+    font-size: 14px;
+}
+.background-body{
+	background:linear-gradient(to right bottom ,#ffbe03eb,#fcdfa2e8),url(http://2.bp.blogspot.com/-XWNJBMyuJ1E/U8K_12OHVnI/AAAAAAAAIpw/0tDEDL9dPoM/s1600/Hotel-HD-wallpapers.jpg);
+    height: 100vh;
+    width: 100vw;
+}
+.heading-block{
+	position: absolute;
+    top: 30%;
+	left: 50%;
+	transform: translateX(-50%);
+	color: #766A68;
+	text-transform: uppercase;
+}
+.title-heading{
+    letter-spacing: 10px;
+}
+.side-heading{
+	letter-spacing: 12px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.button {
+	display: inline-block;
+    padding: 15px 25px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #FDFDFD;
+    background-color: #766A68;
+    border: none;
+    border-radius: 50px;
+    margin-bottom: 15px;
+    width: 130px;
+    box-shadow: 0 3px #999;
+}
+  
+  .button:hover {background-color: #AFB8C7;color: #766A68}
+  
+  .button:active {
+	color: #766A68;
+	background-color: #AFB8C7;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+  }
+  .btn-grp{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+
+  .inputtext {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+.inputtext:focus {
+    border: 1.2px solid #555;
+}
+.login-container{
+	position: absolute;
+    top: 20%;
+    transform: translate(-50%);
+    left: 50%;
+    background-color: #FDFDFD;
+	padding: 20px;
+	box-shadow: 6px 7px 15px 0px #766A68;
+}
+
+.heading-page{
+	color: #FFBE03;
+}
+.form-fields{
+	display: flex;
+    flex-direction: column;
+}
+.form-field-ele{
+	display: flex;
+}
+.input-btn{
+	display: block;
+    padding: 10px 11px;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+    color: #FDFDFD;
+    background-color: #766A68;
+    border: none;
+    text-align: center;
+    border-radius: 50px;
+    margin-bottom: 3px;
+    margin: auto;
+    width: 99px;
+    box-shadow: 0 3px #999;
+}
+.login-btn-container{
+	padding-top: 10px
 }
