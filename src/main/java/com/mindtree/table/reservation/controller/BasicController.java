@@ -22,6 +22,7 @@ import com.mindtree.table.reservation.entity.HotelMenuType;
 import com.mindtree.table.reservation.entity.HotelTableType;
 import com.mindtree.table.reservation.entity.Hotels;
 import com.mindtree.table.reservation.service.CustomerRegistrationService;
+import com.mindtree.table.reservation.service.EmailService;
 import com.mindtree.table.reservation.service.ReservationService;
 
 @Controller
@@ -30,8 +31,8 @@ public class BasicController {
 	ReservationService reservationService;
 	@Autowired
 	CustomerRegistrationService customerRegistrationService;
-	/*@Autowired
-	private EmailService sender;*/
+	@Autowired
+	private EmailService sender;
 
 	@RequestMapping("/")
 	public String welcome(Map<String, Object> model) {
@@ -111,7 +112,37 @@ public class BasicController {
 
 	}
 
-	
+	@RequestMapping(value = "/doPayment", method = RequestMethod.POST)
+    public ModelAndView doPayment(@RequestParam("billTotal") Long billTotal, @RequestParam("cardNo") String cardNo,
+        @RequestParam("cvv") String cvv, Model model, HttpServletRequest request) {
+
+        boolean paymentStatus = reservationService.paymentProcess(billTotal, cardNo, cvv);
+        if (paymentStatus) {
+            HttpSession session = request.getSession();
+            String bookeduserMailId = (String) session.getAttribute("bookeduserMailId");
+            String bookedhname = (String) session.getAttribute("bookedhname");
+            String bookedusertableSelected = (String) session.getAttribute("bookedusertableSelected");
+            String bookedmenuSelected = (String) session.getAttribute("bookedmenuSelected");
+            int bookedpersonCount = (int) session.getAttribute("bookedpersonCount");
+            // System.out.println(valid);
+            String bookedUserName = (String) session.getAttribute("validuserName");
+            reservationService.saveBooking(billTotal, bookeduserMailId, bookedhname, bookedusertableSelected,
+                bookedmenuSelected, bookedUserName, bookedpersonCount);
+            ModelAndView modelAndView = new ModelAndView();
+            modelAndView.setViewName("PaymentSuccess");
+            try {
+
+                sender.sendEmail(billTotal, bookeduserMailId, bookedhname, bookedusertableSelected, bookedmenuSelected,
+                    bookedpersonCount);
+
+                return new ModelAndView("PaymentSuccess", "message", "Email Sent!");
+            }
+            catch (Exception ex) {
+                return new ModelAndView("PaymentSuccess", "message", "Error in sending email: " + ex);
+            }
+        }
+        return new ModelAndView("PaymentView", "message", "Payment Unsuccessful...");
+    }
 
 	
 	@RequestMapping(value = "/saveRegistration", method = RequestMethod.POST)
