@@ -8,56 +8,41 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Registration</title>
-<style> 
-.inputtext {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 3px solid #ccc;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-    outline: none;
-}
-
-.inputtext:focus {
-    border: 3px solid #555;
-}
-</style>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:700,400" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet">
+<script src="js/index.js" ></script>
 </head>
 <body>
- 
-<font color="red">${message}</font>
-
-		<form action="saveRegistration" method="post" >  
-
-<h1><center>Register</center></h1>
-<br><br><br><br><br>
-            
-            <table align="center" > 
-            
-           
-                <tr>  
-                    <td>Enter a valid Email ID</td>  
-                    <td><input type="text" name="emailId" class="inputtext" required="required" /><form:errors path="user.emailId"/> </td>  
-                </tr>  
-                <tr>  
-                    <td>Password</td>  
-                    <td><input type="password" name="password"  class="inputtext" required="required" /><form:errors path="user.password"/></td>  
-                </tr> 
-                <tr>  
-                    <td>Customer Name</td>  
-                    <td><input type="text" name="custName" class="inputtext" required="required" /><form:errors path="user.custName"/> </td>  
-                </tr> 
-                <tr>  
-                    <td>Contact Number</td>  
-                    <td><input type="text" name="phoneNo" class="inputtext" required="required" /><form:errors path="user.phoneNo"/> </td>  
-                </tr>  
-                <tr>  
-                    <td><input type="submit" value="Register" /></td>  
-                </tr>  
-            </table>  
-  
-    </form>  
+<div class="background-body">
+    <div class="registration-container">
+        <h1 class="heading-page"><center>Register</center></h1>
+        <font color="red">${message}</font>
+        <form action="saveRegistration" method="post" > 
+            <div class="form-fields">
+                <div>
+                    <span>Email ID</span>
+                    <input type="text" name="emailId" class="inputtext" required="required" /><form:errors path="user.emailId"/> 
+                </div>
+                <div>
+                    <span>Password</span>
+                    <input type="password" name="password"  class="inputtext" required="required" /><form:errors path="user.password"/>
+                </div>
+                <div>
+                    <span>Name</span>
+                    <input type="text" name="custName" class="inputtext" required="required" /><form:errors path="user.custName"/>
+                </div>
+                <div>
+                    <span>Contact Number</span>
+                    <input type="text" name="phoneNo" class="inputtext" required="required" /><form:errors path="user.phoneNo"/>
+                </div>
+                <div class = "login-btn-container">
+                    <input class="input-btn" type="submit" value="Register"/>
+                </div>
+            </div>
+      </form>  
+    </div>
+</div>
 </body>
 </html>

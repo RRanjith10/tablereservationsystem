@@ -1,8 +1,6 @@
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%> 
-    
+    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -16,12 +14,9 @@
 </head>
 <body>
 <div class="background-body">
-
     <div class="login-container">
     <h1 class="heading-page"><center>Login</center></h1>
-
     <font color="red">${message}</font>
-
 		<form action="checkLogin" method="post" >  
             <div class="form-fields">
                 <div>
@@ -36,13 +31,8 @@
                 <input class="input-btn" type="submit" value="Login" />
                 </div>
             </div>
-    </form>  
-
-
+    </form> 
     </div>
-    
 </div>
- 
-
-</body>
+ </body>
 </html>

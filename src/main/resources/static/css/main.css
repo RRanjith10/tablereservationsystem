@@ -17,7 +17,7 @@
 
 body {
     font-family: "Nunito", sans-serif;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 1.7;
     /* background-color: #FFBE03; */
     font-size: 14px;
@@ -94,6 +94,16 @@ body {
 .login-container{
 	position: absolute;
     top: 20%;
+    transform: translate(-50%);
+    left: 50%;
+    background-color: #FDFDFD;
+	padding: 20px;
+	box-shadow: 6px 7px 15px 0px #766A68;
+}
+
+.registration-container{
+	position: absolute;
+    top: 12%;
     transform: translate(-50%);
     left: 50%;
     background-color: #FDFDFD;
