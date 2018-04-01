@@ -59,8 +59,8 @@ public class TableReservationController {
         @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
         @ApiResponse(code = 404, message = "User registerion is not found/unavailable")
     })
-    @RequestMapping(value = "/registration", method = RequestMethod.GET)
-    public ModelAndView registration(Map<String, Object> model) {
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public ModelAndView register(Map<String, Object> model) {
         return new ModelAndView("Registration");
     }
 
@@ -74,7 +74,7 @@ public class TableReservationController {
     @RequestMapping(value = "/saveRegistration", method = RequestMethod.POST)
     public ModelAndView createUser(@ModelAttribute("user") Customer user, BindingResult bindingResult, Model model) {
         customerRegistrationService.saveCustomer(user);
-        return new ModelAndView("Login", "message", "Registration Successful!!!");
+        return new ModelAndView("Login", "message", "Registration Successful.");
     }
     @ApiOperation(value = "Loads login page",response = String.class)
     @ApiResponses(value = {
@@ -87,10 +87,10 @@ public class TableReservationController {
         return "Login";
     }
     @ApiOperation(value = "To perform validation with the enterred user credentials",response = ModelAndView.class)
-    @RequestMapping(value = "/checkLogin", method = RequestMethod.POST)
-    public ModelAndView checkLogin(@ModelAttribute("user") Customer user, HttpServletRequest request) {
+    @RequestMapping(value = "/validateUser", method = RequestMethod.POST)
+    public ModelAndView validateUser(@ModelAttribute("user") Customer user, HttpServletRequest request) {
 
-        boolean validUser = customerRegistrationService.checkLogin(user.getEmailId(), user.getPassword());
+        boolean validUser = customerRegistrationService.validateUser(user.getEmailId(), user.getPassword());
         // checks the db to find the user is valid
         if (validUser) {
             Customer cust = customerRegistrationService.searchCustomer(user.getEmailId());
@@ -130,7 +130,7 @@ public class TableReservationController {
         // this is to get the hotels list based on the city name
         List<Hotels> retrieveHotels = reservationService.searchHotelsByCity(searchname);
         if (retrieveHotels.size() == 0) {
-            return new ModelAndView("Search", "message", "No Hotel found in that city!!!!");
+            return new ModelAndView("Search", "message", "No Hotels found in the selected city. Please select another city.");
         }
         return new ModelAndView("DisplayHotels", "retrieveHotels", retrieveHotels);
     }
@@ -183,8 +183,8 @@ public class TableReservationController {
         @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
         @ApiResponse(code = 404, message = "Payment gateway is not found/unavailable")
     })
-    @RequestMapping(value = "/doPayment", method = RequestMethod.POST)
-    public ModelAndView doPayment(@RequestParam("billTotal") Long billTotal, @RequestParam("cardNo") String cardNo,
+    @RequestMapping(value = "/makePayment", method = RequestMethod.POST)
+    public ModelAndView makePayment(@RequestParam("billTotal") Long billTotal, @RequestParam("cardNo") String cardNo,
         @RequestParam("cvv") String cvv, Model model, HttpServletRequest request) {
 
         boolean paymentStatus = reservationService.paymentProcess(billTotal, cardNo, cvv);

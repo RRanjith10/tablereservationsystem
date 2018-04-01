@@ -10,7 +10,7 @@
 <title>Payment Success</title>
 </head>
 <body>
-<form action="checkLogin" method="post" >  
+<form action="validateUser" method="post" >  
 
 <h1><center>Payment</center></h1>
 <br><br><br><br><br>

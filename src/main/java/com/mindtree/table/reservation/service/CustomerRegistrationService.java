@@ -22,7 +22,7 @@ public class CustomerRegistrationService {
 
     }
 
-    public boolean checkLogin(String emailId, String password) {
+    public boolean validateUser(String emailId, String password) {
         Customer loginCust = customerRepo.findByEmailId(emailId);
         if (loginCust != null && loginCust.getEmailId().equals(emailId) && loginCust.getPassword().equals(password)) {
             return true;

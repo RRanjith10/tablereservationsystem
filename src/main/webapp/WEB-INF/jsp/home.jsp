@@ -19,7 +19,7 @@
 </div>
 <div class="btn-grp">
   <font size="6"><center><a href="login"><button class="button">Login</button></a><center><font size="6">
-  <font size="6"><a href="registration"><center><button class="button">Register</button></center></a>   <br><br>  <font size="6">
+  <font size="6"><a href="register"><center><button class="button">Register</button></center></a>   <br><br>  <font size="6">
 <div>
 </div>
 </div>

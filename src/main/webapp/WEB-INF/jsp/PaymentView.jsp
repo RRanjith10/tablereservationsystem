@@ -21,7 +21,7 @@ function checkCardNoLength() {
  
 <font color="red">${message}</font>
 <c:set var="billTotal" value= "${billTotal}"/>
-		<form action="doPayment" method="post" >  
+		<form action="makePayment" method="post" >  
 
 <h1><center>Make your Payment here!!!</center></h1>
 <br><br><br><br><br>
