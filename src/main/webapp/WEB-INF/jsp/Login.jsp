@@ -15,7 +15,7 @@
 <body>
 <div class="background-body">
     <div class="login-container">
-    <h1 class="heading-page"><center>Login</center></h1>
+    <h1 class="heading-page">Login</h1>
     <font color="red">${message}</font>
 		<form action="validateUser" method="post" >  
             <div class="form-fields">

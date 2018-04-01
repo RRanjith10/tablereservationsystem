@@ -33,7 +33,7 @@ body {
 	left: 50%;
 	transform: translateX(-50%);
 	color: #766A68;
-	text-transform: uppercase;
+    text-transform: uppercase;
 }
 .title-heading{
     letter-spacing: 10px;
@@ -112,7 +112,8 @@ body {
 }
 
 .heading-page{
-	color: #FFBE03;
+    color: #FFBE03;
+    text-align: center;
 }
 .form-fields{
 	display: flex;
