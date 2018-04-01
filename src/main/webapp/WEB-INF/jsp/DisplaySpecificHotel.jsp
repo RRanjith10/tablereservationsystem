@@ -9,7 +9,7 @@
 
 </head>
 <body>
-<font color="black" size="4">Logged in as : ${validuserName}</font><br>
+<font color="black" size="4">Welcome : ${validuserName}</font><br>
 <h2><center> View your Hotel Details </center></h2>
 
 <center> Enter the details<center> 
@@ -31,11 +31,11 @@
                 </tr>
                  <tr>  
                     <td>Select Table</td>  
-                    <td><input type="text" list="tablesList" name="tableSelected" /></td>  
+                    <td><input type="text" list="tablesList" name="tableSelected" required="required"/></td>  
                 </tr>  
                   
                 <td>No. of persons</td>  
-                    <td><input type="text" name="personCount"  /></td>  
+                    <td><input type="text" name="personCount"  required="required"/></td>  
                 </tr>
 
                 
@@ -52,7 +52,6 @@
 
 function myFunction() {
 
-    //alert("I am an alert box!");
 
       var menuselect = document.getElementById("menuSelected").value;
 
@@ -134,7 +133,7 @@ function readTable(){
 
 <td>
 
-<input type="text" list="menulist" name="menuSelected" id="menuSelected"/>
+<input type="text" list="menulist" name="menuSelected" id="menuSelected" />
 
 </td>
 

@@ -202,7 +202,7 @@ public class TableReservationController {
             modelAndView.setViewName("PaymentSuccess");
             try {
 
-                sender.sendEmail(billTotal, bookeduserMailId, bookedhname, bookedusertableSelected, bookedmenuSelected,
+                sender.sendEmail(billTotal, bookeduserMailId, bookedUserName , bookedhname, bookedusertableSelected, bookedmenuSelected,
                     bookedpersonCount);
 
                 return new ModelAndView("PaymentSuccess", "message", "Email Sent!");

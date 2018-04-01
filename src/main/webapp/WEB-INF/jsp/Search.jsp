@@ -27,7 +27,7 @@
 <form action="searchHotels" method="post">  
 
 
- <font color="black" size="4">Logged in as : ${validuserName}</font><br>
+ <font color="black" size="4">Welcome : ${validuserName}</font><br>
 <br><br><br><br><br>
 
             <table align="center" >  

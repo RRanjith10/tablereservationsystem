@@ -12,13 +12,15 @@ public class EmailService {
     @Autowired
     private JavaMailSender sender;
 
-    public void sendEmail(Long billTotal, String bookeduserMailId, String bookedhname, String bookedusertableSelected,
-        String bookedmenuSelected, int bookedpersonCount) throws Exception {
+    public void sendEmail(Long billTotal, String bookeduserMailId, String userName, String bookedhname,
+        String bookedusertableSelected, String bookedmenuSelected, int bookedpersonCount) throws Exception {
         MimeMessage message = sender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(message);
         helper.setTo(bookeduserMailId);
         // dynamic mail text which gives complete details about booking
-        String mailText = "<html><body><h2>Table booked - Confirmation Mail</h2><br><br><h3>Here the details of the booking</h3><br><table><tr><td>Customer Name</td><td></td></tr><tr><td>Hotel Details</td>"
+        String mailText = "<html><body><h2>Table booked - Confirmation</h2><br><br><h3>Here the details of the booking</h3><br><table><tr><td>Customer Name</td>"
+            + userName
+            + "<td></td></tr><tr><td>Hotel Details</td>"
             + bookedhname
             + "<td></td></tr><tr><td>Booked Table</td><td>"
             + bookedusertableSelected
@@ -26,9 +28,9 @@ public class EmailService {
             + bookedpersonCount
             + "</td></tr><tr><td>Total Paid (in Rs.)</td><td>"
             + billTotal
-            + "</td></tr></table><br><h4>Thanks for using our app!!! Happy dining!!!</h4></body></html>";
+            + "</td></tr></table><br><h4>Thank you for using Bright Creek!!! Happy dining!!!</h4></body></html>";
         helper.setText(mailText, true);
-        helper.setSubject("Hotel Booking");
+        helper.setSubject("Confirmation of table reservation");
         sender.send(message);
     }
 

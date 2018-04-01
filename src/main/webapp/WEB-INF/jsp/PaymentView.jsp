@@ -12,12 +12,11 @@
 function checkCardNoLength() {
     var textBox = document.getElementById("cardNo");
 	var textLength = textBox.value.length;
-	//alert(textLength);
 }
 </script>
 </head>
 <body>
- <font color="black" size="4">Logged in as : ${validuserName}</font><br>
+ <font color="black" size="4">Welcome : ${validuserName}</font><br>
  
 <font color="red">${message}</font>
 <c:set var="billTotal" value= "${billTotal}"/>
@@ -25,7 +24,7 @@ function checkCardNoLength() {
 
 <h1><center>Make your Payment here!!!</center></h1>
 <br><br><br><br><br>
-        <fieldset style="width: 1500px" >  
+        <fieldset style="width: 1230px" >  
             <legend > Confirm and Pay </legend>  
             <table align="center" > 
             
@@ -48,11 +47,11 @@ function checkCardNoLength() {
                 </tr>
                 <tr>  
                     <td>Enter Card Number</td>  
-                    <td><input type="text" name="cardNo" id="cardNo" required="required" placeholder="Enter 10 digit account no."/></td>  
+                    <td><input type="text" name="cardNo" id="cardNo" required="required" maxlength="16"/></td>  
                 </tr>
                 <tr>  
                     <td>Enter CVV Number</td>  
-                    <td><input type="password" name="cvv" id="cvv" required="required" /></td>  
+                    <td><input type="password" name="cvv" id="cvv" required="required" maxlength="3"/></td>  
                 </tr>   
                 <tr>  
                     <td><input type="submit" value="Confirm Payment" onclick="checkCardNoLength()"/></td>  

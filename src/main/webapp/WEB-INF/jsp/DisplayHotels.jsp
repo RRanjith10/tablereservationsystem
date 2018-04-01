@@ -11,7 +11,7 @@
 </head>
 <body>
 <br>
-<font color="black" size="4">Logged in as : ${validuserName}</font><br>
+<font color="black" size="4">Welcome : ${validuserName}</font><br>
 <h2><center>  Select the hotel </center></h2> <br><br><br>
 
 <form action="viewHotel" method="get">
