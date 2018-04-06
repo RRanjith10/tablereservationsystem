@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.mindtree.table.reservation.entity.HotelMenuType;
 
-public interface MenuRepository extends CrudRepository<HotelMenuType, Integer>{
-	List<HotelMenuType> findByHotelHid(int hid);
+public interface MenuRepository extends CrudRepository<HotelMenuType, Integer> {
+    List<HotelMenuType> findByHotelHid(int hid);
 
 }
