@@ -16,7 +16,7 @@
         <form action="validateUser" method="post" >  
             <h3>Payment Success </h3>  <br><br>
             <h3><font color="black">${message}</font></h3>
-            <a href="search"><center>Search Hotels Again</center></a>  
+            <a href="search"><center>Search Again</center></a>  
         </form>
     </div>  
 </div>

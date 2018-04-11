@@ -205,7 +205,7 @@ public class TableReservationController {
                 sender.sendEmail(billTotal, bookeduserMailId, bookedUserName , bookedhname, bookedusertableSelected, bookedmenuSelected,
                     bookedpersonCount);
 
-                return new ModelAndView("PaymentSuccess", "message", "Email Sent!");
+                return new ModelAndView("PaymentSuccess", "message", "Booking details are emailed to the registered mail id!");
             }
             catch (Exception ex) {
                 return new ModelAndView("PaymentSuccess", "message", "Error in sending email: " + ex);
