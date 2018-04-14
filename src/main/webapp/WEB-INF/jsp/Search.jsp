@@ -29,7 +29,7 @@
 							name="searchbycity" required="required" /></td>
 					</tr>
 					<tr>
-						<td><input type="submit" value="Search" /></td>
+						<td><input style="margin-left: 50%" class="input-btn" type="submit" value="Search" /></td>
 					</tr>
 					<datalist id="cities"> <c:forEach items="${citieslist}"
 						var="t">

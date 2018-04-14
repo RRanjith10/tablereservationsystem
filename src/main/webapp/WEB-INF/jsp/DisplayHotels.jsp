@@ -32,7 +32,7 @@
 					<th>Address</th>
 					<th>City</th>
 					<th>State</th>
-					<th>Select</th>
+					<th></th>
 				</tr>
 				<c:forEach items="${retrieveHotels}" var="e">
 					<tr>
@@ -40,7 +40,7 @@
 						<td><c:out value="${e.getAddress()}" /></td>
 						<td><c:out value="${e.getCity()}" /></td>
 						<td><c:out value="${e.getState()}" /></td>
-						<td><a href="view.do"><button
+						<td><a href="view.do"><button class="input-btn"
 									value="<c:out value="${e.getHid()}"/>" id="btn" name="btn">View
 									Hotel</button></a></td>
 					</tr>
